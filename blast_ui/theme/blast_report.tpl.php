@@ -71,14 +71,11 @@ $no_hits = TRUE;
   <a href="<?php print '../../' . $xml_filename; ?>">XML</a>
 </p>
 
-<?php
-	include_once("blast_align_image.php");
-
 <p>The following table summarizes the results of your BLAST. To see additional information
 about each hit including the alignment, click on that row in the table to expand it.</p>
 
 <?php
-
+include_once("blast_align_image.php");
 // Load the XML file
 $xml = simplexml_load_file($xml_filename);
 
@@ -149,7 +146,7 @@ if ($xml) {
 														. $hsp_xml->{'Hsp_query-to'} . ';';	
 						$Hsp_bit_score .= 	$hsp_xml->{'Hsp_bit-score'} .';';							
 
-						 
+					}	 
 					// SUMMARY ROW
 					// If the id is of the form gnl|BL_ORD_ID|### then the parseids flag
 					// to makeblastdb did a really poor job. In this case we want to use
@@ -240,7 +237,7 @@ if ($xml) {
       $query_with_no_hits[] = $query_name;
 
 		} // end of else
-  }	//end of foreach - BlastOutput_iterations
+  }
 
   if ($no_hits) {
     print '<p class="no-hits-message">No results found.</p>';
