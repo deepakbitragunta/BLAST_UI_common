@@ -7,6 +7,7 @@
  * Specifically, a database table (blastdb) is created to store additional information
  * related to blast database nodes such as the name/path to the NCBI BLAST database files
  * and the type (protein or nucleotide) of the database.
+ * 
  */
 
 
